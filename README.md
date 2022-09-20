@@ -70,7 +70,7 @@ sudo virt-install \
   --name $VM_NAME \
   --memory $VM_MEM \
   --vcpus $VM_CPU \
-  --disk ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img,device=disk \
+  --disk jammy-server-cloudimg-amd64-disk-kvm.img,device=disk \
   --disk cloud-init.iso,device=cdrom \
   --os-variant ubuntu22.04 \
   --virt-type kvm \
