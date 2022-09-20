@@ -32,9 +32,9 @@ users:
     lock_passwd: false
 #    ssh-authorized-keys:
 #      - <sshPUBKEY>
-```
-# Only cert auth via ssh (console access can still login)
-```
+
+#Only cert auth via ssh (console access can still login)
+
 ssh_pwauth: false
 disable_root: false
 password: $PASSWORD
