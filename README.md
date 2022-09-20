@@ -88,6 +88,7 @@ sudo virt-install \
   --disk cloud-init.iso,device=cdrom \
   --os-variant ubuntu22.04 \
   --virt-type kvm \
+  --boot hd \
   --graphics none \
   --network network:default
 ```
