@@ -72,7 +72,6 @@ sudo virt-install \
   --vcpus $VM_CPU \
   --disk ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img,device=disk \
   --disk cloud-init.iso,device=cdrom \
-  --os-type linux \
   --os-variant ubuntu22.04 \
   --virt-type kvm \
   --graphics none \
