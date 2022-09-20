@@ -81,16 +81,20 @@ sudo virt-install \
 ```
 #hostname of machine:
 VM_NAME=Ubuntu-test-VM
+echo VM_NAME=$VM_NAME
 
 #user password
 PASSWORD=ubuntu
+echo PASSWORD=$PASSWORD
 
 #Memory to allocate for guest instance in megabytes.
 #If the hypervisor does not have enough free memory, it is usual for it to automatically take memory away from the host operating system to satisfy this allocation.
 VM_MEM=8192
+echo VM_MEM=$VM_MEM
 
 #Number of virtual cpus to configure for the guest.
 #If 'maxvcpus' is specified, the guest will be able to hotplug up to MAX vcpus while the guest is running, but will startup with VCPUS
 VM_CPU=8
+echo VM_CPU=$VM_CPU
 
 ```
