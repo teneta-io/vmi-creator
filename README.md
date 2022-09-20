@@ -77,3 +77,20 @@ sudo virt-install \
   --graphics none \
   --network network:default
 ```
+## Example value for variables:
+```
+#hostname of machine:
+VM_NAME=Ubuntu-test-VM
+
+#user password
+PASSWORD=ubuntu
+
+#Memory to allocate for guest instance in megabytes.
+#If the hypervisor does not have enough free memory, it is usual for it to automatically take memory away from the host operating system to satisfy this allocation.
+VM_MEM=8192
+
+#Number of virtual cpus to configure for the guest.
+#If 'maxvcpus' is specified, the guest will be able to hotplug up to MAX vcpus while the guest is running, but will startup with VCPUS
+VM_CPU=8
+
+```
