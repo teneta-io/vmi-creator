@@ -11,10 +11,10 @@ chpasswd: { expire: False }
 hostname: $VM_NAME
 
 clouduser-ssh-key: ~/.ssh/id_rsa.pub
-```
 
-## Configure sshd to allow users logging in using password rather than just keys
-```
+
+#Configure sshd to allow users logging in using password rather than just keys
+
 ssh_pwauth: True
 " | sudo tee cloud-init.cfg
 ```
