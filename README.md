@@ -1,8 +1,15 @@
 # Requirements
 ```
-# Ubuntu
+# For Ubuntu host system:
 sudo apt update -y
-sudo apt install -y virtinst qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager
+sudo apt install -y \
+virtinst \
+qemu \
+qemu-kvm \
+libvirt-daemon \
+libvirt-clients \
+bridge-utils \
+virt-manager
 ```
 
 # Create a cloud-init configuration so we can set the password and the hostname etc.
