@@ -1,5 +1,6 @@
 # Create a cloud-init configuration so we can set the password and the hostname etc.
-```sudo echo "#cloud-config
+```
+sudo echo "#cloud-config
 system_info:
   default_user:
     name: ubuntu
@@ -9,14 +10,18 @@ password: $PASSWORD
 chpasswd: { expire: False }
 hostname: $VM_NAME
 
-clouduser-ssh-key: ~/.ssh/id_rsa.pub```
+clouduser-ssh-key: ~/.ssh/id_rsa.pub
+```
 
 ## Configure sshd to allow users logging in using password rather than just keys
-```ssh_pwauth: True
-" | sudo tee cloud-init.cfg```
+```
+ssh_pwauth: True
+" | sudo tee cloud-init.cfg
+```
 
 # Create a cloud-init configuration so we can set the password, hostname, and some other things.
-```sudo echo "#cloud-config
+```
+sudo echo "#cloud-config
 hostname: $VM_NAME
 users:
   - name: ubuntu
@@ -29,7 +34,8 @@ users:
 #      - <sshPUBKEY>
 ```
 # Only cert auth via ssh (console access can still login)
-```ssh_pwauth: false
+```
+ssh_pwauth: false
 disable_root: false
 password: $PASSWORD
 chpasswd: { expire: False }
@@ -40,7 +46,8 @@ package_update: true
 " | sudo tee cloud-init.cfg
 ```
 # Optionally create netplan network configuration
-```sudo echo "#network_config
+```
+sudo echo "#network_config
 network:
     ethernets:
         ens2:
@@ -49,12 +56,17 @@ network:
 " | sudo tee network_config.cfg
 ```
 # Create the ISO file from the cloud config file we just created:
-```sudo cloud-localds cloud-init.iso cloud-init.cfg```
+```
+sudo cloud-localds cloud-init.iso cloud-init.cfg
+```
 ## Or with network
-```sudo cloud-localds -v --network-config=network_config.cfg cloud-init.iso cloud-init.cfg```
+```
+sudo cloud-localds -v --network-config=network_config.cfg cloud-init.iso cloud-init.cfg
+```
 
 # Create VM with the cloud image and the cloud-init metadata
-```sudo virt-install \
+```
+sudo virt-install \
   --name $VM_NAME \
   --memory $VM_MEM \
   --vcpus $VM_CPU \
